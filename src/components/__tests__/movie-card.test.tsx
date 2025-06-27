@@ -43,6 +43,7 @@ describe('MovieCard', () => {
   it('calls router.push with the correct URL when "See Details" is clicked', () => {
     const push = jest.fn();
     jest
+      // eslint-disable-next-line @typescript-eslint/no-require-imports
       .spyOn(require('next/navigation'), 'useRouter')
       .mockReturnValue({ push });
     render(<MovieCard movie={movieMock} />);

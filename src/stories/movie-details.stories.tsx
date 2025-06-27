@@ -1,6 +1,5 @@
-import type { Meta, StoryObj } from '@storybook/react';
-
 import MovieDetails from '@/components/movie-details/movie-details';
+import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import movieMock from '../mocks/movie.mock';
 
 const meta: Meta<typeof MovieDetails> = {

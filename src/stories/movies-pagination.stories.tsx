@@ -1,5 +1,6 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import MoviesPagination from '@/components/movies-pagination/movies-pagination';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 
 const meta: Meta<typeof MoviesPagination> = {
   title: 'Components/MoviesPagination',

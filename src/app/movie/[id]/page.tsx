@@ -3,12 +3,6 @@ import Movie from '@/models/movie.model';
 import MovieService from '@/services/movie.service';
 import { notFound } from 'next/navigation';
 
-type Props = {
-  params: {
-    id: string;
-  };
-};
-
 export async function generateStaticParams() {
   const ids = ['574475', '1311844', '552524'];
   return ids.map((id) => ({ id }));
@@ -17,8 +11,13 @@ export async function generateStaticParams() {
 export const dynamicParams = true;
 export const revalidate = 3600;
 
-export default async function MoviePage({ params }: Props) {
-  const request = await MovieService.getMovieDetails(params.id);
+export default async function MoviePage({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const { id } = await params;
+  const request = await MovieService.getMovieDetails(id);
   const movie: Movie = request.data;
   if (!movie) return notFound();
 

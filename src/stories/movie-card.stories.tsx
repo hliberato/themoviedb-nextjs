@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import MovieCard from '../components/movie-card/movie-card';
 import movieMock from '../mocks/movie.mock';
 
